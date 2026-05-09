@@ -11,16 +11,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      'http://localhost:3000',
-      'http://localhost:5173',
-      'https://medicine-inventory-ten.vercel.app',
-    ],
-    credentials: true,
-  })
-);
+app.use(cors()); // Allow all origins
 app.use(
   express.json({
     limit: '10mb',
