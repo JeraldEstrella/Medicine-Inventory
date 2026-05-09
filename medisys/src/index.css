@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #0d1117;
+  --sidebar: #0a0e14;
+  --panel: #151b23;
+  --panel2: #1c2430;
+  --border: #21293a;
+  --border2: #2a3548;
+  --text: #e8edf3;
+  --text2: #8b95a3;
+  --text3: #5a6475;
+  --accent: #0ea5e9;
+  --accent-dim: rgba(14, 165, 233, 0.12);
+  --green: #10b981;
+  --green-dim: rgba(16, 185, 129, 0.12);
+  --yellow: #f59e0b;
+  --yellow-dim: rgba(245, 158, 11, 0.12);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.12);
+  --purple: #a78bfa;
+  --purple-dim: rgba(167, 139, 250, 0.12);
+  --mono: 'JetBrains Mono', monospace;
+  --radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 4px;
+}
+
+/* ── SHARED UTILITY CLASSES ── */
+.text-sm {
+  font-size: 0.78rem;
+  color: var(--text3);
+}
+.mt-1 {
+  margin-top: 0.5rem;
+}
+.section-gap {
+  margin-top: 1rem;
+}
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1rem 0;
+}
+
+.pill {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  font-family: var(--mono);
+}
+.pill-red {
+  background: var(--red-dim);
+  color: var(--red);
+}
+.pill-yellow {
+  background: var(--yellow-dim);
+  color: var(--yellow);
+}
+.pill-green {
+  background: var(--green-dim);
+  color: var(--green);
+}
+.pill-blue {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+.pill-purple {
+  background: var(--purple-dim);
+  color: var(--purple);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text3);
+  font-size: 0.8rem;
+}
+.empty-state .empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.4;
+}
+
+/* category colors */
+.cat-antibiotics {
+  color: #f472b6;
+}
+.cat-vaccines {
+  color: #818cf8;
+}
+.cat-maintenance {
+  color: #34d399;
+}
+.cat-analgesics {
+  color: #fb923c;
+}
+.cat-vitamins {
+  color: #facc15;
+}
+.cat-others {
+  color: #94a3b8;
+}

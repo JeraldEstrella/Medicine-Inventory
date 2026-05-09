@@ -1,0 +1,21 @@
+.dispense-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.dispense-header {
+  margin-bottom: 0.5rem;
+}
+
+.disp-stock-info {
+  display: flex;
+  gap: 2rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.8rem;
+}

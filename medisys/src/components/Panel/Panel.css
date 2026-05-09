@@ -1,0 +1,28 @@
+.panel {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.panel.wide {
+  grid-column: span 2;
+}
+
+.panel-head {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.panel-body {
+  padding: 1rem 1.2rem;
+  width: 100%;
+}

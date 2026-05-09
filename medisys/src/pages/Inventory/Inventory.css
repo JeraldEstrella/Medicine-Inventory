@@ -1,0 +1,124 @@
+.inv-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.inventory-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-container {
+  padding: 0.5rem 0;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.5rem 0.9rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-family: 'Sora', sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-box:focus {
+  border-color: var(--accent);
+}
+.search-box::placeholder {
+  color: var(--text3);
+}
+
+select.filter-select {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.5rem 0.8rem;
+  color: var(--text2);
+  font-size: 0.78rem;
+  font-family: 'Sora', sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 0.6rem 1rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text3);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+tbody tr:hover {
+  background: var(--panel2);
+}
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  vertical-align: middle;
+}
+
+.td-name {
+  font-weight: 600;
+  color: var(--text);
+}
+.td-category {
+  color: var(--text3);
+  font-size: 0.74rem;
+}
+
+.stock-bar {
+  width: 80px;
+  height: 5px;
+  background: var(--border2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.stock-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+.expiry-warn {
+  color: var(--red);
+  font-weight: 500;
+}
+.expiry-ok {
+  color: var(--text2);
+}
