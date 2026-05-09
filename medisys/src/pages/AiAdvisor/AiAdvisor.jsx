@@ -51,7 +51,7 @@ function buildInventoryContext(medicines, dispenseLogs) {
     return {
       name: m.name,
       category: m.category,
-      qty: m qty,
+      qty: m.qty,
       minStock: m.minStock,
       unit: m.unit,
       expiryDate: m.expiry,
@@ -119,7 +119,7 @@ export default function AiAdvisor({ toast }) {
   const expiringCount = medicines.filter(
     (m) => m.expiry && new Date(m.expiry) <= in30
   ).length;
-  const totalValue = medicines.reduce((s, m) => s + m qty * (m.price || 0), 0);
+  const totalValue = medicines.reduce((s, m) => s + m.qty * (m.price || 0), 0);
 
   async function sendToAI(userMessage) {
     const trimmed = userMessage.trim();
@@ -139,17 +139,20 @@ export default function AiAdvisor({ toast }) {
     try {
       const inventoryContext = buildInventoryContext(medicines, dispenseLogs);
 
-      const response = await fetch('https://medisys-backend.onrender.com/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: trimmed,
-          history: messages,
-          inventoryContext,
-        }),
-      });
+      const response = await fetch(
+        'https://medisys-backend.onrender.com/api/chat',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: trimmed,
+            history: messages,
+            inventoryContext,
+          }),
+        }
+      );
 
       const data = await response.json();
 

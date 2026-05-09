@@ -18,7 +18,13 @@ app.use(
   })
 );
 
-await connectDB();
+try {
+  await connectDB();
+  console.log('✅ Database connected');
+} catch (err) {
+  console.error('❌ Database connection failed:', err);
+  process.exit(1);
+}
 
 app.use('/api', aiRouter);
 app.use('/api', postsRouter);
