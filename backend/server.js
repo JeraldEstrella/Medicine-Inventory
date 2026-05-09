@@ -11,7 +11,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors()); // Allow all origins
+// CORS must be FIRST, before any routes
+app.use(cors());
+app.options('*', cors()); // Handle preflight requests
+
 app.use(
   express.json({
     limit: '10mb',
