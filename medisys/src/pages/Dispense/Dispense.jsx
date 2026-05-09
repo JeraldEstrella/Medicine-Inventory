@@ -22,7 +22,9 @@ export default function Dispense({ toast }) {
   useEffect(() => {
     async function fetchDispenses() {
       try {
-        const response = await fetch('http://localhost:3000/api/dispense');
+        const response = await fetch(
+          'https://medisys-backend.onrender.com/api/dispense'
+        );
         const data = await response.json();
 
         if (data.success && data.data) {
@@ -58,17 +60,20 @@ export default function Dispense({ toast }) {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/dispense', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          medicineId: medId,
-          qty: Number(qty),
-          to,
-          by,
-          notes,
-        }),
-      });
+      const response = await fetch(
+        'https://medisys-backend.onrender.com/api/dispense',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            medicineId: medId,
+            qty: Number(qty),
+            to,
+            by,
+            notes,
+          }),
+        }
+      );
 
       const result = await response.json();
 

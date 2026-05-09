@@ -46,7 +46,7 @@ export default function Inventory({ toast }) {
   const [search, setSearch] = useState('');
   const [catFilter, setCat] = useState('');
   const [stockFilter, setStock] = useState('');
-  const [modal, setModal] = useState(null); // ← ADD THIS LINE
+  const [modal, setModal] = useState(null);
   const [form, setForm] = useState(BLANK);
 
   // ── filter ──────────────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ export default function Inventory({ toast }) {
       minStock: String(m.minStock),
       price: String(m.price || ''),
     });
-    setModal({ mode: 'edit', id: m._id }); // ← Change m.id to m._id
+    setModal({ mode: 'edit', id: m._id });
   }
 
   function closeModal() {
@@ -114,14 +114,17 @@ export default function Inventory({ toast }) {
     try {
       let response;
       if (modal.mode === 'add') {
-        response = await fetch('http://localhost:3000/api/medicines', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+        response = await fetch(
+          'https://medisys-backend.onrender.com/api/medicines',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          }
+        );
       } else {
         response = await fetch(
-          `http://localhost:3000/api/medicines/${modal.id}`, // Uses the _id stored in modal
+          `https://medisys-backend.onrender.com/api/medicines/${modal.id}`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -155,7 +158,7 @@ export default function Inventory({ toast }) {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/medicines/${id}/delete`,
+        `https://medisys-backend.onrender.com/api/medicines/${id}/delete`,
         {
           method: 'POST',
         }

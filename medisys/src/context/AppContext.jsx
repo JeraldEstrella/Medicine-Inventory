@@ -85,7 +85,9 @@ export function AppProvider({ children }) {
   useEffect(() => {
     async function fetchMedicines() {
       try {
-        const response = await fetch('http://localhost:3000/api/medicines');
+        const response = await fetch(
+          'https://medisys-backend.onrender.com/api/medicines'
+        );
         const data = await response.json();
 
         if (data.success && data.data) {
@@ -112,7 +114,9 @@ export function AppProvider({ children }) {
   useEffect(() => {
     async function fetchDispenses() {
       try {
-        const response = await fetch('http://localhost:3000/api/dispense');
+        const response = await fetch(
+          'https://medisys-backend.onrender.com/api/dispense'
+        );
         const data = await response.json();
         if (data.success && data.data) {
           dispatch({
