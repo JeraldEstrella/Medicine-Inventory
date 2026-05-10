@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export async function connectDB() {
+export async function connectDb() {
   try {
     const MONGODB_URI =
       process.env.MONGODB_URI || 'mongodb://localhost:27017/medisys';
@@ -16,6 +16,6 @@ export async function connectDB() {
   }
 }
 
-export function disconnectDB() {
+export function disconnectDb() {
   return mongoose.disconnect();
 }
