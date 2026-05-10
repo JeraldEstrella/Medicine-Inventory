@@ -1,10 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { connectDB } from './monggoDb/Connect.js';
+import { connectDb } from './monggoDb/Connect.js';
 import dispensesRouter from './router/dispense/DispenseRouter.js';
 import postsRouter from './router/post/PostRouter.js';
-import dispenseRouter from './router/dispense/DispenseRouter.js';
 import getsRouter from './router/get/GetRouter.js';
 import assistantRouter from './router/ai/ChatAssistant.js';
 
@@ -12,7 +11,6 @@ dotenv.config();
 
 const app = express();
 
-// CORS must be FIRST, before any routes
 app.use(cors());
 
 app.use(
@@ -23,7 +21,7 @@ app.use(
 
 try {
   console.log('Connecting to database...');
-  await connectDB();
+  await connectDb();
   console.log('✅ Database connected');
 } catch (err) {
   console.error('❌ FULL DATABASE ERROR:', err);
