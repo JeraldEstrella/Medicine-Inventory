@@ -97,4 +97,26 @@ router.post('/medicines/:id/delete', async (req, res) => {
   }
 });
 
+router.delete('/medicines/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    console.log(id);
+
+    const medicine = await Medicine.findByIdAndDelete(id);
+
+    if (!medicine) {
+      return res.status(404).json({ error: 'Medicine not found.' });
+    }
+
+    return res.json({
+      success: true,
+      message: 'Medicine deleted successfully.',
+    });
+  } catch (err) {
+    console.error('[DELETE MEDICINE ERROR]', err);
+    return res.status(500).json({ error: 'Failed to delete medicine.' });
+  }
+});
+
 export default router;

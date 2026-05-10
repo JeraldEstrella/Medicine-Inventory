@@ -21,10 +21,11 @@ app.use(
 );
 
 try {
+  console.log('Connecting to database...');
   await connectDB();
   console.log('✅ Database connected');
 } catch (err) {
-  console.error('❌ Database connection failed:', err);
+  console.error('❌ FULL DATABASE ERROR:', err);
   process.exit(1);
 }
 

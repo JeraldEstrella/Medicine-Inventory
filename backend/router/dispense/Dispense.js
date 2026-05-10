@@ -50,7 +50,7 @@ router.post('/dispense', async (req, res) => {
 // ── GET ALL DISPENSES ──────────────────────────────
 router.get('/dispense', async (req, res) => {
   try {
-    const dispenses = await Dispense.find().sort({ date: -1 });
+    const dispenses = await Dispense.find().sort({ createdAt: -1 });
 
     return res.json({
       success: true,
