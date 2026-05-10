@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import Medicine from '../../monggoDb/model/Medicine.js';
 
-const router = Router();
+const getsRouter = Router();
 
 // ── GET ALL MEDICINES ──────────────────────────────
-router.get('/medicines', async (req, res) => {
+getsRouter.get('/medicines', async (req, res) => {
   try {
     const medicines = await Medicine.find().sort({ createdAt: -1 });
 
@@ -22,7 +22,7 @@ router.get('/medicines', async (req, res) => {
 });
 
 // ── GET SINGLE MEDICINE ────────────────────────────
-router.get('/medicines/:id', async (req, res) => {
+getsRouter.get('/medicines/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -42,4 +42,4 @@ router.get('/medicines/:id', async (req, res) => {
   }
 });
 
-export default router;
+export default getsRouter;

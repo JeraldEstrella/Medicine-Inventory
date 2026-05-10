@@ -2,10 +2,10 @@ import { Router } from 'express';
 import Medicine from '../../monggoDb/model/Medicine.js';
 import Dispense from '../../monggoDb/model/Dispense.js';
 
-const router = Router();
+const dispenseRouter = Router();
 
 // ── CREATE DISPENSE ────────────────────────────────
-router.post('/dispense', async (req, res) => {
+dispenseRouter.post('/dispense', async (req, res) => {
   try {
     const { medicineId, qty, to, by, notes } = req.body;
 
@@ -48,7 +48,7 @@ router.post('/dispense', async (req, res) => {
 });
 
 // ── GET ALL DISPENSES ──────────────────────────────
-router.get('/dispense', async (req, res) => {
+dispenseRouter.get('/dispense', async (req, res) => {
   try {
     const dispenses = await Dispense.find().sort({ createdAt: -1 });
 
@@ -63,4 +63,4 @@ router.get('/dispense', async (req, res) => {
   }
 });
 
-export default router;
+export default dispenseRouter;

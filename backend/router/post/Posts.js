@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import Medicine from '../../monggoDb/model/Medicine.js';
 
-const router = Router();
+const postsRouter = Router();
 
 // ── CREATE ──────────────────────────────────────────
-router.post('/medicines', async (req, res) => {
+postsRouter.post('/medicines', async (req, res) => {
   try {
     const { name, category, qty, minStock, unit, expiry, supplier, price } =
       req.body;
@@ -38,7 +38,7 @@ router.post('/medicines', async (req, res) => {
 });
 
 // ── UPDATE ──────────────────────────────────────────
-router.post('/medicines/:id', async (req, res) => {
+postsRouter.post('/medicines/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { name, category, qty, minStock, unit, expiry, supplier, price } =
@@ -75,7 +75,7 @@ router.post('/medicines/:id', async (req, res) => {
 });
 
 // ── DELETE ──────────────────────────────────────────
-router.post('/medicines/:id/delete', async (req, res) => {
+postsRouter.post('/medicines/:id/delete', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -97,7 +97,7 @@ router.post('/medicines/:id/delete', async (req, res) => {
   }
 });
 
-router.delete('/medicines/:id', async (req, res) => {
+postsRouter.delete('/medicines/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -119,4 +119,4 @@ router.delete('/medicines/:id', async (req, res) => {
   }
 });
 
-export default router;
+export default postsRouter;

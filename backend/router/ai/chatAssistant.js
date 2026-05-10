@@ -4,13 +4,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const router = Router();
+const assistantRouter = Router();
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
-router.post('/chat', async (req, res) => {
+assistantRouter.post('/chat', async (req, res) => {
   try {
     const { message, history = [], inventoryContext = '' } = req.body;
 
@@ -77,4 +77,4 @@ ${message}
   }
 });
 
-export default router;
+export default assistantRouter;
