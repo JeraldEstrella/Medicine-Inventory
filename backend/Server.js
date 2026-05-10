@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { connectDb } from './monggoDb/Connect.js';
+import { connectDb } from './monggoDb/connect.js';
 import dispensesRouter from './router/dispense/DispenseRouter.js';
 import postsRouter from './router/post/PostRouter.js';
 import getsRouter from './router/get/GetRouter.js';
