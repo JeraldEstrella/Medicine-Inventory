@@ -31,7 +31,7 @@ try {
 app.use('/api', assistantRouter);
 app.use('/api', postsRouter);
 app.use('/api', getsRouter);
-app.use('/api', dispenseRouter);
+app.use('/api', dispensesRouter);
 
 const PORT = process.env.PORT || 3000;
 
