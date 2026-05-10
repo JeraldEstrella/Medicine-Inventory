@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Medicine from '../../monggoDb/model/Medicine.js';
+import Medicine from '../../mongodb/model/Medicine.js';
 
 const getsRouter = Router();
 
