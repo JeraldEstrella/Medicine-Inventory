@@ -30,7 +30,7 @@ try {
   process.exit(1);
 }
 
-app.use('/api', aiRouter);
+app.use('/api', assistantRouter);
 app.use('/api', postsRouter);
 app.use('/api', getsRouter);
 app.use('/api', dispenseRouter);
