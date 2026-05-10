@@ -1,11 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { connectDb } from './monggoDb/connect.js';
-import dispensesRouter from './router/dispense/DispenseRouter.js';
-import postsRouter from './router/post/PostRouter.js';
-import getsRouter from './router/get/GetRouter.js';
-import assistantRouter from './router/ai/ChatAssistant.js';
+import { connectDb } from './mongodb/connect.js';
+import dispensesRouter from './router/dispense/dispenseRouter.js';
+import postsRouter from './router/post/postRouter.js';
+import getsRouter from './router/get/getRouter.js';
+import assistantRouter from './router/ai/chatAssistant.js';
 
 dotenv.config();
 
