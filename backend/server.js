@@ -11,31 +11,28 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = (
-  process.env.ALLOWED_ORIGINS || 'http://localhost:5173'
-).split(',');
-
 app.use(
   cors({
-    origin: allowedOrigins,
-    credentials: true,
+    origin: [
+      'http://localhost:5173',
+      'https://medicine-inventory-owcg13gg0-jek-s-projects.vercel.app',
+    ],
   })
 );
 
-app.use(
-  express.json({
-    limit: '10mb',
-  })
-);
+app.use(express.json({ limit: '10mb' }));
 
-try {
-  console.log('Connecting to database...');
-  await connectDb();
-  console.log('✅ Database connected');
-} catch (err) {
-  console.error('❌ FULL DATABASE ERROR:', err);
-  process.exit(1);
-}
+// Wrap async code in IIFE or move to separate function
+(async () => {
+  try {
+    console.log('Connecting to database...');
+    await connectDb();
+    console.log('✅ Database connected');
+  } catch (err) {
+    console.error('❌ FULL DATABASE ERROR:', err);
+    process.exit(1);
+  }
+})();
 
 app.use('/api', assistantRouter);
 app.use('/api', postsRouter);
