@@ -23,7 +23,7 @@ export default function Dispense({ toast }) {
     async function fetchDispenses() {
       try {
         const response = await fetch(
-          'https://medisys-backend.onrender.com/api/dispense'
+          'https://medicine-inventory-z694.onrender.com/api/dispense'
         );
         const data = await response.json();
 
@@ -61,7 +61,7 @@ export default function Dispense({ toast }) {
 
     try {
       const response = await fetch(
-        'https://medisys-backend.onrender.com/api/dispense',
+        'https://medicine-inventory-z694.onrender.com/api/dispense',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

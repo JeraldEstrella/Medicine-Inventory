@@ -140,7 +140,7 @@ export default function AiAdvisor({ toast }) {
       const inventoryContext = buildInventoryContext(medicines, dispenseLogs);
 
       const response = await fetch(
-        'https://medisys-backend.onrender.com/api/chat',
+        'https://medicine-inventory-z694.onrender.com/api/chat',
         {
           method: 'POST',
           headers: {

@@ -115,7 +115,7 @@ export default function Inventory({ toast }) {
       let response;
       if (modal.mode === 'add') {
         response = await fetch(
-          'https://medisys-backend.onrender.com/api/medicines',
+          'https://medicine-inventory-z694.onrender.com/api/medicines',
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -124,7 +124,7 @@ export default function Inventory({ toast }) {
         );
       } else {
         response = await fetch(
-          `https://medisys-backend.onrender.com/api/medicines/${modal.id}`,
+          `https://medicine-inventory-z694.onrender.com/api/medicines/${modal.id}`,
           {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -158,7 +158,7 @@ export default function Inventory({ toast }) {
 
     try {
       const response = await fetch(
-        `https://medisys-backend.onrender.com/api/medicines/${id}/delete`,
+        `https://medicine-inventory-z694.onrender.com/api/medicines/${id}/delete`,
         {
           method: 'POST',
         }

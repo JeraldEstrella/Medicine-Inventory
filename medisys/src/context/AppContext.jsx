@@ -86,7 +86,7 @@ export function AppProvider({ children }) {
     async function fetchMedicines() {
       try {
         const response = await fetch(
-          'https://medisys-backend.onrender.com/api/medicines'
+          'https://medicine-inventory-z694.onrender.com/api/medicines'
         );
         const data = await response.json();
 
@@ -115,7 +115,7 @@ export function AppProvider({ children }) {
     async function fetchDispenses() {
       try {
         const response = await fetch(
-          'https://medisys-backend.onrender.com/api/dispense'
+          'https://medicine-inventory-z694.onrender.com/api/dispense'
         );
         const data = await response.json();
         if (data.success && data.data) {
