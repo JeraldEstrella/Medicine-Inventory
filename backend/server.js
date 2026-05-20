@@ -13,16 +13,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      'http://localhost:5173',
-      'https://medicine-inventory-owcg13gg0-jek-s-projects.vercel.app',
-    ],
+    origin: 'https://medicine-inventory-ten.vercel.app',
   })
 );
 
 app.use(express.json({ limit: '10mb' }));
 
-// Wrap async code in IIFE or move to separate function
 (async () => {
   try {
     console.log('Connecting to database...');
