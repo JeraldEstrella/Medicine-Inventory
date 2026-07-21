@@ -70,6 +70,7 @@ Medicine-Inventory/
 - Create/add medicine entries
 - Fetch and display medicine data
 - Dispense/reduce medicine stock
+- ai assisted inventory
 - Organized frontend architecture (`components`, `pages`, `hooks`, `context`, `utils`)
 - Modular backend route grouping (`get`, `post`, `dispense`, `ai`)
 
